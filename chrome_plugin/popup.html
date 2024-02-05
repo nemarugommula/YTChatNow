@@ -1,0 +1,33 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Logger</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src='socket.js'>
+  </script>
+  <script src="popup.js"></script>
+
+<body class="p-4 min-w-full bg-slate-800">
+  <div class="bg-black rounded-xl p-1 flex justify-center">
+    <h2 class="text-white" id="chat-room-id"></h2>
+  </div>
+  <div id="chat-container">
+    <ul id="chats"></ul>
+    <br />
+    <form id="chat-form" class="flex">
+      <input type="text"
+        class="flex-1 gap-2 appearance-none border-b-2 border-red-500 focus:outline-none focus:border-red-700 transition duration-300 ease-in-out"
+        id="chat-input" />
+      <button type="submit" class="bg-red-600 rounded text-white p-2" id="chat-send">
+        <p class="font-sans">Send</p>
+      </button>
+    </form>
+  </div>
+
+</body>
+
+</html>
