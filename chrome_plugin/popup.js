@@ -18,21 +18,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         .then(response=>response.json())
         .then(data => {
           if (data.chats.length === 0) {
-            chatsList.innerHTML = '<li>No chats yet.</li>';
           } else {
             chatsList.innerHTML = '';
-            const chats = data.chats.map(item => `<li>${item}</li>`);
+            const chats = data.chats.map(item => `<li  class="bg-red-100 inline-block overflow-wrap p-2 rounded-xl rounded-bl-none my-1 ">${item}</li><br/>`);
             chatsList.innerHTML = chats.join('');
           }
 
           socket.emit('join', videoId);
 
           socket.on('chat message', (msg) => {
-            if(msg.videoId == videoId)chatsList.innerHTML += `<li>${msg.value}</li>`;
+            if(msg.videoId == videoId)chatsList.innerHTML += `<li class="bg-red-100 inline-block p-2 rounded-xl rounded-bl-none my-1 ">${msg.value}</li><br/>`;
           });
 
           socket.on('joined', (vid) => {
-            if(vid== videoId)chatsList.innerHTML += `<li>${"-------------user joined-------------"}</li>`;
+            if(vid== videoId)chatsList.innerHTML += '<li class="text-center text-gray-500 text-opacity-70">user joined</li>';
           });
 
 

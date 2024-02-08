@@ -11,19 +11,18 @@
   </script>
   <script src="popup.js"></script>
 
-<body class="p-4 min-w-full bg-slate-800">
-  <div class="bg-black rounded-xl p-1 flex justify-center">
+<body class="p-4 bg-slate-800">
+  <div class="bg-black rounded-xl p-2 flex justify-center">
     <h2 class="text-white" id="chat-room-id"></h2>
   </div>
-  <div id="chat-container">
-    <ul id="chats"></ul>
-    <br />
-    <form id="chat-form" class="flex">
-      <input type="text"
-        class="flex-1 gap-2 appearance-none border-b-2 border-red-500 focus:outline-none focus:border-red-700 transition duration-300 ease-in-out"
-        id="chat-input" />
+  <div id="chat-container m-4">
+    <ul id="chats" class="overflow-scroll" style="height:300px;width:250px"></ul>
+    <form id="chat-form" class="flex gap-2 pt-4 w-full justify-center items-end">
+      <textarea type="text" placeholder='Type your message here...'
+        class="min-h-40 w-full appearance-none border-b-2 border-red-500 focus:outline-none focus:border-red-700 transition duration-300 ease-in-out"
+        id="chat-input"></textarea>
       <button type="submit" class="bg-red-600 rounded text-white p-2" id="chat-send">
-        <p class="font-sans">Send</p>
+        <span>Send</span>
       </button>
     </form>
   </div>
