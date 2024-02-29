@@ -1,0 +1,41 @@
+{
+  "name": "chrome_plugin",
+  "version": "1.0.0",
+  "description": "chrome plugin to enable instant messanger for youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nemarugommula/YTChatNow.git"
+  },
+  "keywords": [
+    "youtube",
+    "chat",
+    "chrome",
+    "plugins"
+  ],
+  "author": "vishnu Nemarugommula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nemarugommula/YTChatNow/issues"
+  },
+  "homepage": "https://github.com/nemarugommula/YTChatNow#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io-client": "^4.7.4",
+    "tailwindcss": "^3.4.1",
+    "zustand": "^4.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.23.3",
+    "babel-loader": "^9.1.3",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}
