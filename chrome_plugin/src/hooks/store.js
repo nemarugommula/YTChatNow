@@ -3,7 +3,7 @@ import {create} from 'zustand'
 export const useStore = create((set) => ({
     title : 'Chat Room',
     videoId : '',
-    chats : ['one','one','one','one','one','one','one','one','one','one','one','one','one','one','one','one','one'],
+    chats : ['vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu','vish nu'],
     error : '',
     socket:'',
     addChat : (chat) => set((state) => ({chats : [...state.chats, chat]})),

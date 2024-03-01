@@ -1,11 +1,10 @@
-import useStore from './hooks/store';
+import {useStore} from './hooks/store';
 import io from 'socket.io-client';
 
-const { setError, setTitle, setVideoId,addChat } = useStore();
 export const socket = io('http://localhost:3000');
+export const useListerners = function () {
+  const { setError, setTitle, setVideoId,addChat } = useStore();
 
-
-export const listerners = (function () {
   document.addEventListener('DOMContentLoaded', function () {
     chrome.runtime.sendMessage({ action: 'getActiveTabUrl' });
   });
@@ -18,7 +17,7 @@ export const listerners = (function () {
         setError('');
         const videoId = match[1] + '';
         setVideoId(videoId);
-        setTitle('Chat Room - ' + request.title);
+        setTitle(request.title);
         const url = 'http://localhost:3000/api/chats/' + videoId;
         fetch(url)
           .then(response => response.json())
@@ -43,4 +42,4 @@ export const listerners = (function () {
       }
     }
   });
-})();
+};
