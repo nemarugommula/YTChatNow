@@ -1,6 +1,7 @@
 import useStore from './hooks/store';
-const { title, chats, addChat, error, setError } = useStore();
+import io from 'socket.io-client';
 
+const { setError,setTitle,setVideoId} = useStore();
 const socket = io(process.env.SERVER_HOST);
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -14,9 +15,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     const match = activeTabUrl.match(regex);
     if (match) {
       setError('');
-      
+      setTitle('Chat Room');
       const videoId = match[1]+''; 
-      document.getElementById('chat-room-id').innerText=request.title;
+      setVideoId(videoId);
+      setTitle('Chat Room - ' + request.title);
       const url = 'http://localhost:3000/api/chats/'+videoId;
       const chatsList = document.getElementById('chats');
       fetch(url)
