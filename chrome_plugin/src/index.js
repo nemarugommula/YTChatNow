@@ -9,14 +9,16 @@ import '../tailwind.css';
 // dotenv.config();
 
 const App = () => {
-const {error} = useStore();
-
+  const { error } = useStore();
   return (
-  <div>
-    <Header />
-    <Chat />
-    <Input />
-  </div>
+    <div class="w-64 h-96">
+      <Header />
+      <div class="flex flex-col h-full w-full">
+      <Chat/>
+      <Input />
+      </div>
+      {error && <Error/>}
+    </div>
   );
 };
 
